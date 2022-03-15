@@ -1,0 +1,259 @@
+/*s: #6 M20 Latest Weather*/
+#M20-Weather-Report {background: url('/layout/mars2020/images/mars_perseverance_weather-web.jpg') no-repeat top center; background-size: cover;}
+@media only screen and (max-width: 700px) {
+	#M20-Weather-Report {background-position: top right -230px; background-size: cover;}
+} 
+#M20-Weather-Report h2 {font-size: 2.2em;}
+#M20-Weather-Report .description {max-width:550px;}
+#M20-Weather-Report .description .br_content {display:block}
+.embed_text {text-align: right;padding-right: 5px;}
+#M20-Weather-Report #Weather-Content {padding: 0 5% 0}
+#M20-Weather-Report #Weather-Content #Weather-Data{padding:50px 0 0 20px; width:55%;}
+.pageContent #M20-Weather-Report #Weather-Data h1{font-weight: bold;letter-spacing: 1px;}
+#M20-Weather-Report #Weather-Data p{line-height: normal;width:95%}
+#M20-Weather-Report .slash, #M20-Weather-Report .degree .celsius, #M20-Weather-Report .fadeWhite {color:rgba(255,255,255,0.5);}
+#weather_observation .fadeBlack {
+	color: rgba(0,0,0,.3);
+	cursor: pointer;
+}
+.degree .lbl_fahrenheit, .degree .lbl_celsius{cursor: pointer}
+.temperatures.main .fahrenheit, .temperatures.main .celsius{ text-align: right; display: inline-block}
+.highs, .lows {display: table;}
+.highs span, .lows span{display:table-cell;padding: 0 3px; text-align: right; }
+#M20-Weather-Report .vCentered {padding:5% 0; width: 70%; width: 90%}
+#M20-Weather-Report .temperatures.main { padding-left:5%; vertical-align: top;}
+#M20-Weather-Report #tempDate .marsDate {font-weight: bold; font-size: larger}
+#M20-Weather-Report #tempDate .marsDate, #M20-Weather-Report #tempDate .earthDate {display: block;}
+#M20-Weather-Report #Forecast { margin: 0 auto; text-align: center;}
+#M20-Weather-Report #Forecast .item {
+	width:10%;
+	margin:20px 1% 50px;
+	background-color:  rgba(0,0,0,0.25);
+	/* background-color:  rgba(0,0,0,0.4); */
+	padding: 15px 0.2%;
+	display: inline-block;
+	text-align: center; 
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+#M20-Weather-Report #Forecast .item .fadeWhiteLine {
+	background-color: rgba(255,255,255,0.5);
+	height: 2px; 
+	width: 80%;
+	text-align: center;
+	margin: 10px auto;
+}
+#M20-Weather-Report #Forecast .item  .dateUTC{font-size: smaller; font-weight:500; letter-spacing: 0; display: block;}
+#M20-Weather-Report #Forecast .item .low{ color: rgba(255,255,255,0.5);}
+
+.nodata{
+	color:#b2b2b2;
+	font-size: 75%;
+	line-height:normal;
+	font-weight:normal;
+
+}
+@media only screen and (max-width: 920px){
+
+	#M20-Weather-Report #Forecast .item{font-size: 0.9em; margin: 20px 0.2% 50px;line-height: normal; padding: 8px 3px; vertical-align: middle;}
+	#M20-Weather-Report #tempDate .earthDate, #M20-Weather-Report #Forecast .item .dateSol{font-size: 0.8em;}
+	#M20-Weather-Report #Forecast .item .dateUTC{font-weight: 300}
+	#M20-Weather-Report #tempDate .earthDate {display: block; }
+}
+
+@media only screen and (max-width: 512px){
+	#M20-Weather-Report #Forecast .item{font-size: 0.8em;}
+	#M20-Weather-Report #Forecast .item .slash {display: inline-block;}
+	#M20-Weather-Report #Forecast .item:nth-child(-n+4) {
+    	display:none; 
+	}
+	#M20-Weather-Report #Forecast .item {width:25%; font-size:1.2em}
+}
+
+	/*EMBED*/
+	#embedWeather { font-family: "Montserrat",Helvetica,Arial,sans-serif; color: #222; font-size: 0.8em }
+	#embedWeather .box{display: none;}
+	#embedWeather #sizeOptions { margin: 0px; padding: 0px; }
+	#embedWeather #sizeOptions li { list-style: none; font-size: 90%; }
+	#embedWeather .contents {margin:0 auto; text-align: center; display: table}
+	#embedWeather .preview, #embedWeather .options { display:table-cell;vertical-align: top; text-align: left;}
+	#embedWeather .preview {line-height: 0}
+	#embedWeather .options {border: #ccc solid thin; padding: 20px;}
+	#embedWeather .options .contain {width: 300px}
+	#embedWeather .embed-code-wrapper{padding: 5%; width: 80%; word-wrap:break-word; font-family: monospace, serif; font-size: 1em }
+	#embedWeather .options h3{ border-bottom: thin #ccc solid;margin-top: 0;padding-top: 0;}
+	#cboxLoadedContent{overflow-y: inherit !important}
+@media only screen and (max-width: 990px){
+	#embedWeather .options .contain{width: 100%}
+	#embedWeather .contents, #embedWeather .preview, #embedWeather .options { display: block;}
+	#embedWeather .preview iframe{width: 100%}
+}
+
+/* #M20-Weather-Report .gradientOverlay{    background: -owg-linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 25%);
+	background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 70%);
+	background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 70%);
+	background: -o-linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 70%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 70%);
+} */
+@media only screen and (max-width: 920px){
+	#M20-Weather-Report #Weather-Content #Weather-Data {width:100%;}
+	/* #M20-Weather-Report .gradientOverlay{    background: -owg-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);
+		background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);
+		background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);
+		background: -o-linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 70%);
+		z-index: 1;} */
+
+	#M20-Weather-Report #Forecast .item{font-size: 0.9em; margin: 20px 1% 50px;line-height: normal; padding: 8px 3px;}
+	#M20-Weather-Report #tempDate .earthDate, #M20-Weather-Report #Forecast .item .dateSol{font-size: 15px;}
+	#M20-Weather-Report #Forecast .item .dateUTC{font-weight: 300}
+	#M20-Weather-Report #tempDate .earthDate {display: block; }
+
+	#M20-Weather-Report #Forecast .item{font-size: 0.8em;}
+	#M20-Weather-Report #Forecast .item .slash {display: inline-block;}
+	#M20-Weather-Report #Forecast .item:nth-child(-n+3),#M20-Weather-Report #Forecast .item:nth-child(-n+4) {
+    	display:none; 
+	}
+	/*6*/
+    #M20-Weather-Report #Forecast .item:nth-child(4):nth-last-child(3){
+		display: inline-block;
+		width: 25%;
+	}
+
+	/*5*/
+    #M20-Weather-Report #Forecast .item:nth-child(4):nth-last-child(2),
+    #M20-Weather-Report #Forecast .item:nth-child(3):nth-last-child(3){
+		display: inline-block;
+		width: 25%;
+	}
+
+	/*4*/
+    #M20-Weather-Report #Forecast .item:nth-child(2):nth-last-child(3),
+    #M20-Weather-Report #Forecast .item:nth-child(3):nth-last-child(2),
+    #M20-Weather-Report #Forecast .item:nth-child(4):nth-last-child(1){
+		display: inline-block;
+		width: 25%;
+	}
+    
+	/*3*/
+    #M20-Weather-Report #Forecast .item:nth-child(1):nth-last-child(3),
+    #M20-Weather-Report #Forecast .item:nth-child(2):nth-last-child(2),
+    #M20-Weather-Report #Forecast .item:nth-child(3):nth-last-child(1){
+		display: inline-block;
+		width: 25%;
+	}
+    
+	/*2*/
+    #M20-Weather-Report #Forecast .item:nth-child(1):nth-last-child(2),
+    #M20-Weather-Report #Forecast .item:nth-child(2):nth-last-child(1){
+		display: inline-block;
+		width: 35%;
+   }
+    
+	/*1*/
+    #M20-Weather-Report #Forecast .item:nth-child(1):nth-last-child(1){
+         display: inline-block;
+		 width: 30%;
+		}
+	/* all */
+	#M20-Weather-Report #Forecast .item {width:25%; font-size:0.9em}
+	#M20-Weather-Report #Weather-Content.vCentered{padding:5% 0} 
+}
+
+/* specific to table */
+#weather_observation td.windspeed,
+#weather_observation td.winddirection,
+#weather_observation td.sun {
+	background: #f9f9f9;
+	border: none;
+}
+
+#weather_observation thead th{
+	border: none;
+	border-bottom: none;
+	background: #f9f9f9;
+}
+#weather_observation thead th.header-left {
+	padding-left: 10px;
+}
+#weather_observation thead th.second-row {
+	border-bottom: 1px solid darkgray;
+}
+#M20-Weather-Report #Forecast .item .low {
+	color: rgba(255,255,255,1);
+}
+table{
+	table-layout: fixed;
+	width: 100%;
+}
+#M20-Weather-Report #Forecast .item .fahrenheit, #M20-Weather-Report #Forecast .item .celsius {
+	font-weight: 500;
+	font-size:0.85em;
+}
+
+/* s:MBFormat */
+table.mb_table th {
+    background-color: #f9f9f9;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+	padding: 10px 0px;
+}
+
+#weather_observation th.sol,#weather_observation thead th.header-left, #weather_observation thead th{
+    font-weight: 400;
+	padding:5px 10px;
+	line-height: normal;
+}
+table#weather_observation {
+    border-spacing: 0;
+}
+table#weather_observation tr{
+    background-color: #ffffff;
+}
+.mb_table tbody td {
+    font-size: 1em;
+	text-align: center;
+	padding: 10px 0;
+}
+/* e:MBFormat */
+.embedContentText{padding: 0 60px;}
+a.expand_embed_btn {padding: 5px 10px !important; font-size:12px !important;}
+/* .sectionInner.paddedContent {padding: 20px 50px} */
+@media (min-width: 325px){
+	#weather_observation thead th{
+		font-size: 0.75em;
+	}
+	div.high, div.low {
+		white-space: nowrap;
+	}
+}
+/* 600px or wider*/
+@media (min-width: 600px){
+	#weather_observation thead th{
+		font-size: 15px;
+	}
+	#sol-header {
+		width: 10%;
+	}
+}
+@media (min-width: 920px){
+	div.high, div.low {
+		font-size: 0.8em;
+	}
+}
+
+@media (min-width: 1100px){
+	div.high, div.low {
+		font-size: 1.0em;
+	}
+}
+
+@media only screen and (max-width: 920px){
+	#M20-Weather-Report #Forecast .item .fahrenheit, #M20-Weather-Report #Forecast .item .celsius {
+		font-weight: 300;
+	}
+}
+
+/*e: #6 M20 Latest Weather*/
