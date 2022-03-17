@@ -1,3 +1,72 @@
+html, body {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+}
+.bg-container {
+	background-image: url('/Images/Mars.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	height: 100%;
+	border: 5px solid black;
+	box-sizing: border-box;
+}
+.main-title {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 40px;
+	text-align: center;
+	margin-top: 300px;
+	color: rgb(0, 0, 0);
+	margin-right: 100;
+}
+.nav-temp {
+	color: white;
+	margin-top: 10%;
+	text-align: center;
+	text-decoration: none;
+}
+.nav-temp:hover {
+
+	color: black;
+}
+.main-nav ul {
+	list-style-type: none;
+	overflow: hidden; 
+	position: fixed;
+	bottom: 0;
+	width: 95%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/* li {
+	align-items: center;
+	float: left;
+	padding: 16px; 
+} */
+li a {
+	display: inline-block;
+	padding: 14px 16px;
+	margin: 0px auto;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+li a:hover {
+	background: #f1f1f1;
+	color: black;
+}
+
+/* h1, h2, p, table {
+	margin-top: 15px;
+	margin: 20px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+} */
+
 /*s: #6 M20 Latest Weather*/
 #M20-Weather-Report {background: url('/layout/mars2020/images/mars_perseverance_weather-web.jpg') no-repeat top center; background-size: cover;}
 @media only screen and (max-width: 700px) {
