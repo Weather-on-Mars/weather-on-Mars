@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title> NASA Weather API</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <h1>Perseverance Weather</h1>
+
+<h2>Perseverance Rover Daily Weather Report</h2>
+<div id="M20-Weather-Observations" class="section">
+    <div class="sectionInner paddedContent table_wrapper has-scroll">
+<p>The Mars Environmental Dynamics Analyzer (MEDA) measures and provides daily and seasonal reports on atmospheric pressure, humidity, ultraviolet radiation at the Martian surface, air temperature, and ground temperature around the rover. Read more about the <a href="/mars2020/spacecraft/instruments/meda/">MEDA</a> weather station. <br><br>Credit: NASA/JPL-Caltech/CAB(CSIC-INTA)</p><br>
+<div>
+<table id="weather_observation" class="mb_table" style="width:100%;">
+<thead>
+<tr>
+<th colspan="1" scope="col" class="header-left">Date</th>
+<th colspan="1" scope="col" id="sol-header" class="header-left">Sol</th>
+<th colspan="2" scope="col" id="temperature_lbl" class="textAlignCenter">
+<div>Air Temperature (<span class="lbl_fahrenheit">&deg;F</span><span class="slash"> | </span><span
+class="lbl_celsius">&deg;C</span>)</div>
+</th>
+<th colspan="1" scope="col" id="pressure_lbl" class="textAlignCenter">Pressure (Pa)</th>
+<th colspan="1" scope="col" id="sunrise_lbl" class="textAlignCenter">Sunrise</th>
+<th colspan="1" scope="col" id="sunset_lbl" class="textAlignCenter">Sunset</th>
+</tr>
+<tr>
+<th colspan="2" scope="col" class="second-row"></th>
+<th colspan="1" scope="col" class="textAlignCenter second-row">Max.</th>
+<th colspan="1" scope="col" class="textAlignCenter second-row">Min.</th>
+<th colspan="3" scope="col" class="second-row"></th>
+</tr>
+</thead>
+<tr id="weather_top">
+</tr>
+</table></div><p class="textSmall">As more data from a particular sol is downlinked from the spacecraft (sometimes several days later), these values are recalculated, and consequently may change as more data is received on Earth.</p>
+</div>
+</div>
+<script src="m20-weather.js"></script>
+<link rel="stylesheet" href="weather.css" type="text/css">
+<div class="minHeight100"></div>
+<style>.windspeed {display:none;}#weather_observation td.sun {background-color:white}#weather_observation td.pressure{background-color:#f9f9f9;border:none}@media screen and (max-width:700px) { .table_wrapper.has-scroll { position: relative; overflow: hidden;}.table_wrapper.has-scroll>div { overflow-x: auto;}.table_wrapper {/*width: calc(100% - 100px);*/ -webkit-overflow-scrolling: touch;}.table_wrapper table { border-spacing: 1px; border-collapse: collapse; font-size: 15px; line-height: normal;width: auto !important;}}</style>
+</div>
+</body>
+</html>
