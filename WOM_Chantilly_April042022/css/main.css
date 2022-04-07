@@ -1,0 +1,174 @@
+
+    @import 'https://fonts.googleapis.com/css?family=Raleway';
+    html, body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .bg-container {
+        background-image: url('../Images/Mars.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        border: 5px solid black;
+        box-sizing: border-box;
+    }
+    .main-title {
+        font-family: Raleway;
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+        margin-top: 300px;
+        margin-bottom: 200px;
+        color: rgb(0, 0, 0);
+        margin-right: 100;
+    }
+    
+    div.container
+    {
+        font-family: Raleway;
+        margin: 0 auto;
+        padding: 10em 3em;
+        text-align: center;
+    }
+    
+    div.container a
+    {
+        color: #FFF;
+        text-decoration: none;
+        font: 20px Raleway;
+        margin: 0px 10px;
+        padding: 10px 10px;
+        position: relative;
+        height: 100px;
+        z-index: 0;
+        cursor: pointer;
+    }
+    
+    .red
+    {
+        background: #c45938;
+    }
+    
+
+    /* Top and Bottom borders go out for animating navigation menu*/
+    div.topBottomBordersOut a:before, div.topBottomBordersOut a:after
+    {
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        background: #FFF;
+        content: "";
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    
+    div.topBottomBordersOut a:before
+    {
+        top: 0px;
+        transform: translateY(10px);
+    }
+    
+    div.topBottomBordersOut a:after
+    {
+        bottom: 0px;
+        transform: translateY(-10px);
+    }
+    
+    div.topBottomBordersOut a:hover:before, div.topBottomBordersOut a:hover:after
+    {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+    
+@media screen and (min-width:481px) {  /* this sets the layout for desktop or laptop devices */
+    
+    .mobileShow {display: none;} 
+  
+}
+
+
+@media screen and (max-width:480px){ /* this sets the layout for mobile devices */
+.container {display:none;}
+.mobileShow {display: inline;} 
+
+   .menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid #fff; */
+  }
+  .menu-btn__burger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+  }
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255,101,47,.2);
+    transition: all .5s ease-in-out;
+  }
+  .menu-btn__burger::before {
+    transform: translateY(-16px);
+  }
+  .menu-btn__burger::after {
+    transform: translateY(16px);
+  }
+  /* ANIMATION */
+  .menu-btn.open .menu-btn__burger {
+    /*transform: translateX(50px);*/
+    background: transparent;
+    box-shadow: none;
+  }
+  .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) /*translate(35px, -35px)*/;
+  }
+  .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) /*translate(35px, 35px)*/;
+  }
+
+.nav {
+    display: none;
+}
+
+
+li, a {
+    color:white;
+    display:block;
+    font-family: Raleway;
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:1.25rem;
+    text-decoration:none;
+    padding:1rem;
+
+    }
+
+  .nav.open {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+  }
+}
