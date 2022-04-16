@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <head>
     <title> NASA Weather API</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
+    <div class="bg-container">  
+        <div class="container red topBottomBordersOut">
+            <a href="homepage.html">HOME</a>
+            <a href="weather.html">MARS WEATHER</a>
+            <a>MARS DATA</a>
+            <a href="nasa_roverAPI.html">ROVER IMAGES</a>
+            <a href="nasa_api.html">NASA IMAGES</a>
+            <a href="aboutus.html">ABOUT</a>
+        </div>
+        <div class="mobileShow">
+            <div class="menu-btn">
+                <div class="menu-btn__burger"></div>
+              </div>
+              <nav id="nav" class="nav" role="navigation">
+              <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation">
+                <li class="nav__item"><a href="homepage.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="weather.html" class="nav__link">Mars Weather</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Mars Data</a></li>
+                <li class="nav__item"><a href="nasa_roverAPI.html" class="nav__link">Rover Images</a></li>
+                <li class="nav__item"><a href="nasa_api.html" class="nav__link">NASA Images</a></li>
+                <li class="nav__item"><a href="aboutus.html" class="nav__link">About</a></li>
+              </ul>
+              
+            </nav>
+            </div>
     <h1>Perseverance Weather</h1>
 
 <h2>Perseverance Rover Daily Weather Report</h2>
@@ -41,6 +68,8 @@ class="lbl_celsius">&deg;C</span>)</div>
 <link rel="stylesheet" href="weather.css" type="text/css">
 <div class="minHeight100"></div>
 <style>.windspeed {display:none;}#weather_observation td.sun {background-color:white}#weather_observation td.pressure{background-color:#f9f9f9;border:none}@media screen and (max-width:700px) { .table_wrapper.has-scroll { position: relative; overflow: hidden;}.table_wrapper.has-scroll>div { overflow-x: auto;}.table_wrapper {/*width: calc(100% - 100px);*/ -webkit-overflow-scrolling: touch;}.table_wrapper table { border-spacing: 1px; border-collapse: collapse; font-size: 15px; line-height: normal;width: auto !important;}}</style>
+</div>
+<script src="js/main.js"></script>
 </div>
 </body>
 </html>
