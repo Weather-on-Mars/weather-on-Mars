@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+    <title> NASA Rover API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    var apiKey = '11KaVf42Wq6v8YxRGyHGOs9stJaUAhp0p8MZ3n7b'; 
+
+    document.addEventListener('DOMContentLoaded', submitButtonsReady);
+
+    function submitButtonsReady(){
+      document.getElementById('dateInput').addEventListener('click', function(event){
+        var request = new XMLHttpRequest();
+        var date = document.getElementById('dateValue').value;
+        var roverName = "";
+
+        var buttonStatus1 = document.getElementById('button1').checked;
+        var buttonStatus2 = document.getElementById('button2').checked;
+        var buttonStatus3 = document.getElementById('button3').checked;
+
+        if(buttonStatus1 === true)
+        {
+          roverName = "curiosity";
+        }
+        else if(buttonStatus2 === true)
+        {
+          roverName = "opportunity";
+        }
+        else 
+        {
+          roverName = "spirit";
+        }
+        request.open('GET', 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverName +'/photos?earth_date='+ date + '&api_key=' + apiKey, true);
+        request.addEventListener('load',function(){
+         if(request.status >= 200 && request.status < 400){
+            var response = JSON.parse(request.responseText);
+
+            document.getElementById('imageStatus').textContent = 'Found';
+            document.getElementById('imageID').src = response.photos[0].img_src;
+            document.getElementById('roverCaption').textContent = response.photos[0].rover.name;
+            document.getElementById('landingCaption').textContent = response.photos[0].rover.landing_date;
+            document.getElementById('endingCaption').textContent = response.photos[0].rover.max_date;
+
+          } 
+          else 
+          { 
+                console.log("Error in network request: " + request.statusText);
+           }});
+        document.getElementById('imageStatus').textContent = 'Please try a different date or check your syntax!';
+        request.send(null);
+        event.preventDefault();
+      })
+
+    }
+</script>
+<style>
+    img {
+        width: 100%;
+      }
+</style>
+</head>
+<body class="container">
+  <div class="container red topBottomBordersOut">
+    <a href="homepage.html">HOME</a>
+    <a href="weather.html">MARS WEATHER</a>
+    <a>MARS DATA</a>
+    <a href="nasa_roverAPI.html">ROVER IMAGES</a>
+    <a href="nasa_api.html">NASA IMAGES</a>
+    <a href="aboutus.html">ABOUT</a>
+</div>
+<div class="main-title-subpage">
+  <h1>Rover Images</h1>
+</div>
+<div>
+    <form>
+<fieldset>
+    <legend>Date Input (YYYY-MM-DD)</legend>
+    <label for="dateValue"></label>
+    <input type="text" id="dateValue" id="dateValue">
+    <p>RoverSelection
+    <br>
+    <label>
+    <input type="radio" id="button1" name="rover" value="curiosity">Curiosity</label>
+
+    <label>
+        <input type="radio" id="button2" name="rover" value="opportunity">Opportunity</label>
+
+        <label>
+            <input type="radio" id="button3" name="rover" value="spirit">Spirit</label>
+            </p>
+
+    <input type="submit" id="dateInput">
+</fieldset>
+
+    </form>
+</div>
+
+<div>
+    <h2>Image Results</h2>
+    <p>Image retrieval status:</p>
+    <p id="imageStatus"></p>
+    <br>
+    <span>Rover name:</span>
+    <span id="roverCaption"></span>
+    <br>
+    <span>Landing Date:</span>
+    <span id="landingCaption"></span>
+    <br>
+    <span>Expected End Date:</span>
+    <span id="endingCaption"></span>
+    <br>
+    <span>Rover Image:</span>
+    <img id="imageID" src(unknown)>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
