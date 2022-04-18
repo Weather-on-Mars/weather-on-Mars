@@ -1,0 +1,254 @@
+
+    @import 'https://fonts.googleapis.com/css?family=Raleway';
+    html, body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: Raleway;
+    }
+    .bg-container {
+        background-image: url('../Images/Mars.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        border: 5px solid black;
+        box-sizing: border-box;
+    }
+
+    .bg-container-dark {
+      background-color: black;
+      width: 100%;
+      height: 100%;
+      border: 5px solid black;
+      box-sizing: border-box;
+  }
+    .main-title {
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+        margin-top: 300px;
+        margin-bottom: 200px;
+        color: bisque;
+        margin-right: 100;
+       
+    }
+
+    .main-title-subpage {
+      font-weight: bold;
+      font-size: 40px;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-right: 100;
+      opacity: 1.0;
+      color: sienna;
+  }
+h1.main-title-subpage {
+  color: #c45938;
+  font-size: 100px;
+  opacity: 1.0;
+}
+
+h2.main-title-subpage {
+  opacity: 1.0;
+  color:darkgoldenrod;
+  font-size: 80px;
+}
+    div.container
+    {
+        font-family: Raleway;
+        margin: 0 auto;
+        padding: 3em 3em;
+        text-align: center;
+    }
+    
+    div.container a
+    {
+        color: bisque;;
+        text-decoration: none;
+        font: 20px Raleway;
+        margin: 0px 10px;
+        padding: 10px 10px;
+        position: relative;
+        height: 100px;
+        z-index: 0;
+        cursor: pointer;
+    }
+    
+    form {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .red
+    {
+        background: #c45938;
+    }
+    /*flex layout 2 by 2 squares*/
+    .grid2x2 {
+      min-height:0px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      color: white;
+    }
+    .grid2x2 > div {
+      display: flex; 
+      flex-basis: calc(50% - 40px);  
+      justify-content: center;
+      flex-direction: column;
+    }
+    .grid2x2 > div > div {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+    }
+
+    .box {
+      color: sienna;
+      background-color:bisque;
+    }
+
+    /* grid 3 columns */
+
+    .grid3x1 {
+      min-height:0px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      color: white;
+  
+    }
+    .grid3x1 > div {
+      display: flex; 
+      flex-basis: calc(33% - 40px);  
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .grid3x1 > div > div {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+    }
+    /* Top and Bottom borders go out for animating navigation menu*/
+    div.topBottomBordersOut a:before, div.topBottomBordersOut a:after
+    {
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        background: bisque;;
+        content: "";
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    
+    div.topBottomBordersOut a:before
+    {
+        top: 0px;
+        transform: translateY(10px);
+    }
+    
+    div.topBottomBordersOut a:after
+    {
+        bottom: 0px;
+        transform: translateY(-10px);
+    }
+    
+    div.topBottomBordersOut a:hover:before, div.topBottomBordersOut a:hover:after
+    {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+    
+@media screen and (min-width:481px) {  /* this sets the layout for desktop or laptop devices */
+    
+    .mobileShow {display: none;} 
+  
+}
+
+
+@media screen and (max-width:480px){ /* this sets the layout for mobile devices */
+.container {display:none;}
+.mobileShow {display: inline;} 
+
+   .menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid #fff; */
+  }
+  .menu-btn__burger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+  }
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255,101,47,.2);
+    transition: all .5s ease-in-out;
+  }
+  .menu-btn__burger::before {
+    transform: translateY(-16px);
+  }
+  .menu-btn__burger::after {
+    transform: translateY(16px);
+  }
+  /* ANIMATION */
+  .menu-btn.open .menu-btn__burger {
+    /*transform: translateX(50px);*/
+    background: transparent;
+    box-shadow: none;
+  }
+  .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) /*translate(35px, -35px)*/;
+  }
+  .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) /*translate(35px, 35px)*/;
+  }
+
+.nav {
+    display: none;
+}
+
+
+li, a {
+    color:bisque;
+    display:block;
+    font-family: Raleway;
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:1.25rem;
+    text-decoration:none;
+    padding:1rem;
+
+    }
+
+  .nav.open {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+  }
+}
