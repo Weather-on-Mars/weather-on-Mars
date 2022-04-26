@@ -1,6 +1,4 @@
-
-
-$(document).ready(function() {
+$( document ).ready(function() {
     parseData();
     showFahrenheit();
     var nodata = '<span class="nodata">N/A</span>';
@@ -31,20 +29,12 @@ $(document).ready(function() {
     });
     
     function parseData(){
-        var url = 'https://mars.nasa.gov/rss/api/?feed=weather&category=mars2020&feedtype=json';
+        var url = 'https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json';
         $.getJSON(url, function(data){
-            data.sols.sort(function(a, b){
-                return a.sol - b.sol;
-            });
-            console.log(data);
-            var count = -1;
             for(var i = 6; i >= 0; i--){
-                if((data.sols[i].sol >= 15) && (data.sols[i].min_temp != '--' && data.sols[i].max_temp != '--')) {
-                loadWeather(data.sols[i]);
-                }
-                    count++
+                loadWeather(data.soles[i]);
             }
-            loadMain(data.sols[count]);
+            loadMain(data.soles[0]);
         }); 
     }	
 
@@ -70,10 +60,10 @@ $(document).ready(function() {
         var earthMonth = months[date.getUTCMonth()];
         var earthDay = date.getUTCDate();
         var earthMonthDay = earthMonth + ' ' + earthDay;
-        var highCelsius = Math.round(solObject.max_temp);
-        var lowCelsius = Math.round(solObject.min_temp);
-        var highFahrenheit = Math.round(solObject.max_temp * 9/5 + 32);
-        var lowFahrenheit = Math.round(solObject.min_temp * 9/5 + 32);
+        var highCelsius = solObject.max_temp;
+        var lowCelsius = solObject.min_temp;
+        var highFahrenheit = Math.round(highCelsius * 9/5 + 32);
+        var lowFahrenheit = Math.round(lowCelsius * 9/5 + 32);
         if (isNaN(solObject.max_temp)) {highCelsius = nodata; highFahrenheit = nodata;} else {highCelsius += '&deg;C'; highFahrenheit += '&deg;F';}
         if (isNaN(solObject.min_temp)) {lowCelsius = nodata; lowFahrenheit = nodata;} else {lowCelsius += '&deg;C'; lowFahrenheit += '&deg;F';}
         var beginning = '<div class="item">';
@@ -85,25 +75,47 @@ $(document).ready(function() {
         var forecast = document.getElementById('Forecast');
 
         var weatherItem = beginning + dateSol + dateUTC + fahrenheit + celsius + end;
-        //forecast.insertAdjacentHTML('afterbegin', weatherItem);
+        forecast.insertAdjacentHTML('beforeend', weatherItem);
         var filler = 'filler';
         var pressure = solObject.pressure;
         var sunrise = solObject.sunrise;
         var sunset = solObject.sunset;
-        var season = solObject.season;
-
-        if(pressure === "--") {pressure = nodata}
-        if(sunrise === "--") {sunrise = nodata}
-        if(sunset === "--") {sunset = nodata}
-        if(season === "--") {season = nodata}
+        var season_ls = solObject.ls;
+        var season = undefined;
+        if(season_ls < 30) {
+            season = "early autumn"; 
+        } else if (season_ls >= 30 && season_ls < 60)  {
+            season = "middle autumn"; 
+        } else if (season_ls >= 60 && season_ls < 90)  {
+            season = "late autumn"; 
+        } else if(season_ls >= 90 && season_ls < 120) {
+            season = "early winter"; 
+        } else if (season_ls >= 120 && season_ls < 150)  {
+            season = "middle winter"; 
+        } else if (season_ls >= 150 && season_ls < 180)  {
+            season = "late winter"; 
+        } else if(season_ls >= 180 && season_ls < 210) {
+            season = "early spring"; 
+        } else if (season_ls >= 210 && season_ls < 240)  {
+            season = "middle spring"; 
+        } else if (season_ls >= 240 && season_ls < 270)  {
+            season = "late spring"; 
+        } else if(season_ls >= 270 && season_ls < 300) {
+            season = "early summer"; 
+        } else if (season_ls > 300 && season_ls <= 330)  {
+            season = "middle summer"; 
+        } else if (season_ls > 330 && season_ls <= 360)  {
+            season = "late summer"; 
+        }
 
         var weather_observation = '<tr><th scope="row" class="sol">'+ earthMonthDay + ', ' + date.getUTCFullYear() +'</th><th scope="row" class="sol">'+ sol +'</th><td class="temperature max"><span class="fahrenheit"><nobr>'+ highFahrenheit +'</nobr></span><span class="celsius"><nobr>'+ highCelsius +'</nobr></span></td><td class="temperature min"><span class="fahrenheit"><nobr>'+ lowFahrenheit +'</nobr></span><span class="celsius"><nobr>'+ lowCelsius +'</nobr></span></td><td class="pressure max">'+ pressure +'</td><td class="sun rise">'+ sunrise +'</td><td class="sun set">'+ sunset +'</td></tr>';
 
-            $('#weather_observation').append(weather_observation);
+            $('#weather_observation').prepend(weather_observation);
             $('#weather_top').prependTo('#weather_observation');
             if(season != undefined) {
                 $('.season_text').html("At this location, it's currently "+season+".");
             }
+
         showFahrenheit();
     }
 
@@ -115,10 +127,10 @@ $(document).ready(function() {
         var earthMonth = months[date.getUTCMonth()];
         var earthDay = date.getUTCDate();
         var earthMonthDay = earthMonth + ' ' + earthDay + ', ' + date.getUTCFullYear();
-        var highCelsius = Math.round(solObject.max_temp);
-        var lowCelsius = Math.round(solObject.min_temp);
-        var highFahrenheit = Math.round(solObject.max_temp * 9/5 + 32);
-        var lowFahrenheit = Math.round(solObject.min_temp * 9/5 + 32);
+        var highCelsius = solObject.max_temp;
+        var lowCelsius = solObject.min_temp;
+        var highFahrenheit = Math.round(highCelsius * 9/5 + 32);
+        var lowFahrenheit = Math.round(lowCelsius * 9/5 + 32);
 
         if (isNaN(highCelsius)) {highCelsius = nodata;} else {highCelsius += '&deg;';}
         if (isNaN(lowCelsius)) {lowCelsius = nodata;} else {lowCelsius += '&deg;';}
