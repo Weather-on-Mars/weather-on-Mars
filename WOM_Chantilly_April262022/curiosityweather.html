@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="curiosityweather.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<style>
+    p {margin-left: 50px;
+    color: beige;}
+
+    a {color: beige;}
+</style>
 </head>
 <body>
     <script src="curiosityweather.js"></script>
-    <script src="addingdatepickerweather.js"></script>
+
 
     <div class="container red topBottomBordersOut">
         <a href="homepage.html">HOME</a>
@@ -35,30 +41,8 @@
           
         </nav>
         </div>
-    <div>
-        <form>
-    <fieldset>
-        <legend>Date Input (YYYY-MM-DD)</legend>
-        <label for="dateValue"></label>
-        <input type="text" id="dateValue" id="dateValue">
-        <p>RoverSelection
-        <br>
-        <label>
-        <input type="radio" id="button1" name="rover" value="curiosity">Curiosity</label>
-    
-        <label>
-            <input type="radio" id="button2" name="rover" value="opportunity">Opportunity</label>
-    
-            <label>
-                <input type="radio" id="button3" name="rover" value="spirit">Spirit</label>
-                </p>
-    
-        <input type="submit" id="dateInput">
-    </fieldset>
-    
-        </form>
-    </div>
-
+        <div class="main-title-subpage">Curiosity Weather</div>
+        <p>Interested in other dates, <a href="datepickercuriosityweather.html">click here to choose a date and get the weather report.</a></p>
 
 <div class="sectionOuter">
     <div id="MSL-Weather-Report" class="section">
@@ -93,6 +77,7 @@
                     </div>
                 </div>
             </div>
+           
             <div id="Forecast" class="textWhite">
             </div>
         </div>
