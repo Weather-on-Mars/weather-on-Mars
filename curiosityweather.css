@@ -1,17 +1,6 @@
-/* :is(h1, h2, h3, p) {
-    display: flex;  
-    justify-content: center;  
-} */
-
-/* .input-form {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-    margin: 0;
-} */
 
 body {
-    background-color: #c45938;
+    background-color: #5F9EA0;
 }
 
 h1.textWhite.textAlignLeft {
@@ -62,13 +51,13 @@ h1.textWhite.textAlignLeft {
       font-weight: 600;
   }
   
-.nodata{
+.nodata {
 	color:#b2b2b2;
 	font-size: 75%;
 	line-height:normal;
-	font-weight:normal;
-
+    font-weight:normal;
 }
+
   #weather_observation td {
       padding: 10px 5px;
       text-align: center;
@@ -247,7 +236,7 @@ h1.textWhite.textAlignLeft {
   #MSL-Weather-Report #Forecast .item .low {
       color: rgba(255,255,255,1);
   }
-  table{
+  table {
       table-layout: fixed;
       width: 100%;
   }

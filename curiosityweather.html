@@ -9,6 +9,30 @@
     <script src="curiosityweather.js"></script>
     <script src="addingdatepickerweather.js"></script>
 
+    <div class="container-curiosityweather">  
+        <div class="container red topBottomBordersOut">
+            <a href="homepage.html">HOME</a>
+            <a href="weather.html">MARS WEATHER</a>
+            <a>MARS DATA</a>
+            <a href="nasa_roverAPI.html">ROVER IMAGES</a>
+            <a href="nasa_api.html">NASA IMAGES</a>
+            <a href="aboutus.html">ABOUT</a>
+        </div>
+        <div class="mobileShow">
+            <div class="menu-btn">
+                <div class="menu-btn__burger"></div>
+            </div>
+              <nav id="nav" class="nav" role="navigation">
+              <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation">
+                <li class="nav__item"><a href="homepage.html" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="weather.html" class="nav__link">Mars Weather</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Mars Data</a></li>
+                <li class="nav__item"><a href="nasa_roverAPI.html" class="nav__link">Rover Images</a></li>
+                <li class="nav__item"><a href="nasa_api.html" class="nav__link">NASA Images</a></li>
+                <li class="nav__item"><a href="aboutus.html" class="nav__link">About</a></li>
+              </ul>          
+            </nav>
+            </div>
 
 <div class="input-form">
     <form>
@@ -31,6 +55,7 @@
     </div>
 </div>
 
+<div class="container-curiosityweather">
 <div class="sectionOuter">
     <div id="MSL-Weather-Report" class="section">
         <div class="gradientOverlay">
@@ -57,7 +82,7 @@
                                 <span class="fahrenheit"></span>
                                 <span class="celsius"></span>
                                 <span class="degree">
-                                    <span class="lbl_fahrenheit">F</span><span class="slash"> | </span><span class="lbl_celsius">C</span>
+                                    <span class="lbl_fahrenheit">&nbspF</span><span class="slash"> | </span><span class="lbl_celsius">C</span>
                                 </span>
                             </div>
                         </div>
@@ -68,7 +93,9 @@
             </div>
         </div>
     </div>
+</div>
 
+<div class="container-curiosityweather">
     <div id="MSL-Weather-Observations" class="section">
         <h2>Curiosity Rover Daily Weather Report</h2>
         <p>The Rover Environmental Monitoring Station (REMS) measures and provides daily and seasonal reports on atmospheric pressure, humidity, ultraviolet radiation at the Martian surface, air temperature, and ground temperature around the rover. Read more about <a href="https://mars.nasa.gov/msl/spacecraft/instruments/rems/">REMS</a> weather station.
@@ -99,5 +126,6 @@
                 <figcaption><p>As more data from a particular sol is downlinked from the spacecraft (sometimes several days later), these values are recalculated, and consequently may change as more data is received on Earth.</p></figcaption>
         </figure>
             </div>
+        </div>
 </body>
 </html>

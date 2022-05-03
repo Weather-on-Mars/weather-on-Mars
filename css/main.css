@@ -3,8 +3,6 @@
 :is(h1, h2, h3) {
 	display: flex;
 	justify-content: center;
-  color: #ff8c00;
-
 	margin: 0;
 } 
 
@@ -16,14 +14,17 @@ h3 {
 font-size: 12px;
 color: #fff;
 margin-top: 400px;
+
 }
 
 p {
-  width: auto;
+  justify-content: center;
   text-align: center;
   color: #fff;
-  font-size: 24px;
-  margin-top: 250px;
+  font-size: 22px;
+
+  /* margin: 0px; */
+  /* margin-top: 250px; */
 }
 
 html, body {
@@ -34,7 +35,8 @@ html, body {
   align-items: center;
   min-height: 100vh;
   font-family: Raleway;
-  background-color: #dcdcdc;
+  /* background-color: #dcdcdc; */
+  background-color: #5F9EA0;
 }
 
 .bg-container-dark {
@@ -49,50 +51,88 @@ html, body {
   background-position: center center;
   width: 100%;
   height: 100%;
-  /* border: 5px solid black;
-  box-sizing: border-box; */
 }
 
 .bg-container-dark {
   background-color: black;
   width: 100%;
   height: 100%;
-  border: 5px solid black;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+}
+
+.bg-container-light {
+  background-color: #5F9EA0;
+  width: 100%;
+  height: 100%;
+  
 }
 
 .main-title {
   font-weight: bold;
-  font-size: 50px;
+  font-size: 55px;
   text-align: center;
-  margin-top: 450px;
+  margin-top: 130px;
+  /* margin-top: 450px; */
   margin-bottom: 200px;
-  color: bisque;
+  /* color: bisque; */
+  color: black;
   margin-right: 100; 
 }
 
 .main-title-subpage {
-  /* display:flex; */
   font-weight: bold;
   font-size: 40px;
   text-align: center;
+
   margin-top: 20px;
-  /* margin-bottom: 20px; */
   margin-bottom: 80px;
   margin-right: 100;
   opacity: 1.0;
   color: sienna;
+  /* color: #ff8c00; */
   text-decoration: none;
+}
+
+.input-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+/* nasa_roverAPI container */
+.container {
+  margin: 0 auto;
+  text-align: center;
+
+  /* background-color: lightgray; */
+  background-color: #5F9EA0;
+}
+
+/* curiosityweather container */
+.container-curiosityweather {
+  margin: 0 auto;
+  text-align: center;
+
+  background-color: lightgray;
+}
+
+.rover-api-container {
+  overflow-y: scroll;
+  text-align: center;
+
+  margin: 0px;
 }
 
 legend {
   text-align: center;
 }
+
 #submit {
   text-align: center;
 }
 
-div.p-info {
+.p-info {
   margin-top: 300px;
   margin-left: auto;
   margin-right: auto;
@@ -100,17 +140,19 @@ div.p-info {
 }
 
 h1.main-title-subpage {
-  color: #c45938;
-  font-size: 100px;
+  color: sienna;
+  font-size: 85px;
   opacity: 1.0;
+
+  margin: 0;
+  margin-top: 50px;
 }
 
 h2.main-title-subpage {
   opacity: 1.0;
-  color:darkgoldenrod;
-  font-size: 80px;
+  color: sienna;
+  font-size: 40px;
 }
-
 
 div.container {
   font-family: Raleway;
@@ -120,7 +162,8 @@ div.container {
 }
 
 div.container a {
-  color: bisque;;
+  /* color: bisque; */
+  color: #fff;
   text-decoration: none;
   font: 20px Raleway;
   margin: 0px 10px;
@@ -144,15 +187,20 @@ form {
 
 /* curiosity weather */
 
-
 /*flex layout 2 by 2 squares*/
 .grid2x2 {
-  min-height:0px;
+  min-height: 0px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
   color: white;
+
+  padding: 20px;
+  margin-top: 150px;
+  margin-right: auto;
 }
+
 .grid2x2 > div {
   display: flex; 
   flex-basis: calc(50% - 40px);  
@@ -173,11 +221,14 @@ form {
 /* grid 3 columns */
 
 .grid3x1 {
-  min-height:0px;
+  min-height: 0px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
   color: white;
+
+  margin-top: 150px;
 }
 
 .grid3x1 > div {
@@ -191,14 +242,22 @@ form {
   display: flex;
   justify-content: center;
   flex-direction: row;
+
+  background-color: black;
+  padding: 0px;
 }
+
+tr {
+  background-color: bisque;
+}
+
 /* Top and Bottom borders go out for animating navigation menu*/
 div.topBottomBordersOut a:before, div.topBottomBordersOut a:after {
   position: absolute;
   left: 0px;
   width: 100%;
   height: 2px;
-  background: bisque;;
+  background: bisque;
   content: "";
   opacity: 0;
   transition: all 0.3s;
