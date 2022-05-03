@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<head>
+    <title>Date Picker Curiosity Weather</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    .ui-datepicker {
+        background: beige;
+    }
+
+ .ui-datepicker-title {
+        color: darkolivegreen;
+        font-size: 20px;
+        margin: 0 2.3em;
+    }
+
+    .ui-datepicker table {
+        width: 100%;
+        color:#000000;
+        background:lightcoral; 
+}
+
+.ui-datepicker td a {
+text-decoration:none;
+color: black;
+}
+.ui-widget-content .ui-widget-header .ui-icon {color:sienna;}
+
+p {color:beige;}
+
+.curiosityweather {
+    margin-left: 100px;
+    margin-right: auto;
+    width: 300px;
+}
+</style>
+<!--cdn links-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<!--Date Picker-->
+<script>
+$( function() {
+ $( "#dateValue" ).datepicker( {showAnim: "slideDown", dateFormat: "yy-mm-dd"} );
+ $('#dateValue').on("change",function() {
+    var requestedDate = $(this).val();
+    console.log(requestedDate);
+    var url = 'https://mars.nasa.gov/rss/api/?feed=weather&category=msl&feedtype=json';
+        $.getJSON(url, function(data){
+            var matchingDate = data.soles.filter(function (x) {return x.terrestrial_date == requestedDate; });
+            console.log(matchingDate);
+            var response = JSON.parse(JSON.stringify(matchingDate));
+            console.log(response[0]);
+            document.getElementById('terrestrial_date').textContent = requestedDate;
+            document.getElementById('atmo_opacity').textContent = response[0].atmo_opacity;
+            document.getElementById('max_temp').textContent = response[0].max_temp;
+            document.getElementById('min_temp').textContent = response[0].min_temp;
+            
+            
+//id: "2931"
+//local_uv_irradiance_index: "Moderate"
+//ls: "25"
+//max_gts_temp: "8"
+//max_temp: "-12"
+//min_gts_temp: "-82"
+//min_temp: "-73"
+//pressure: "847"
+//pressure_string: "Higher"
+//season: "Month 1"
+//sol: "3076"
+//sunrise: "06:26"
+//sunset: "18:19"
+            
+            });
+ });
+})
+
+   
+    </script>
+
+</head>
+<body>
+
+    <div class="container red topBottomBordersOut">
+        <a href="homepage.html">HOME</a>
+        <a href="weather.html">MARS WEATHER</a>
+        <a>MARS DATA</a>
+        <a href="nasa_roverAPI.html">ROVER IMAGES</a>
+        <a href="nasa_api.html">NASA IMAGES</a>
+        <a href="aboutus.html">ABOUT</a>
+    </div>
+    <div class="bg-container">  
+    <div class="mobileShow">
+        <div class="menu-btn">
+            <div class="menu-btn__burger" id="button"></div>
+          </div>
+          <nav id="nav" class="nav" role="navigation">
+          <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation">
+            <li class="nav__item"><a href="homepage.html" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="weather.html" class="nav__link">Mars Weather</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Mars Data</a></li>
+            <li class="nav__item"><a href="nasa_roverAPI.html" class="nav__link">Rover Images</a></li>
+            <li class="nav__item"><a href="nasa_api.html" class="nav__link">NASA Images</a></li>
+            <li class="nav__item"><a href="aboutus.html" class="nav__link">About</a></li>
+          </ul>
+          
+        </nav>
+        </div>
+        <div class="main-title-subpage">Curiosity Weather</div>
+    <div>
+        <form>
+    <fieldset>
+        <legend>Select a Date</legend>
+        <label for="dateValue"></label>
+        <input type="text" id="dateValue" id="dateValue">
+
+    </fieldset>
+    
+        </form>
+    </div>
+<div class="curiosityweather">
+
+    <p>Date:</p>
+    <p id="terrestrial_date"></p>
+    <br>
+    <p>Atmospheric Opacity:</p>
+    <p id='atmo_opacity'></p>
+    <br>
+    <p>Max Temp:</p>
+    <p id='max_temp'></p>
+    <br>
+    <p>Min Temp:</p>
+    <p id='min_temp'></p>
+    <br>
+    
+</div>
+
+</body>
+</html>
