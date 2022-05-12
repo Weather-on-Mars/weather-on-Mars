@@ -2,6 +2,7 @@
 
 :is(h1, h2, h3) {
 	display: flex;
+  align-items: center;
 	justify-content: center;
 	margin: 0;
 } 
@@ -18,16 +19,16 @@ margin-top: 400px;
 }
 
 p {
+  margin: auto;
   justify-content: center;
   text-align: center;
   color: #fff;
   font-size: 22px;
-
-  /* margin: 0px; */
-  /* margin-top: 250px; */
 }
 
 html, body {
+  scroll-behavior: smooth;
+
   margin: 0;
   height: 100%;
   overflow: hidden;
@@ -35,8 +36,6 @@ html, body {
   align-items: center;
   min-height: 100vh;
   font-family: Raleway;
-  /* background-color: #dcdcdc; */
-  /* background-color: #5F9EA0; */
   background-color: #000000;
 }
 
@@ -58,11 +57,9 @@ html, body {
   background-color: black;
   width: 100%;
   height: 100%;
-  /* box-sizing: border-box; */
 }
 
 .bg-container-light {
-  /* background-color: #5F9EA0; */
   background-color: #000000;
   width: 100%;
   height: 100%;
@@ -73,10 +70,9 @@ html, body {
   font-weight: bold;
   font-size: 55px;
   text-align: center;
+
   margin-top: 130px;
-  /* margin-top: 450px; */
   margin-bottom: 200px;
-  /* color: bisque; */
   color: black;
   margin-right: 100; 
 }
@@ -91,7 +87,6 @@ html, body {
   margin-right: 100;
   opacity: 1.0;
   color: sienna;
-  /* color: #ff8c00; */
   text-decoration: none;
 }
 
@@ -106,9 +101,6 @@ html, body {
 .container {
   margin: 0 auto;
   text-align: center;
-
-  /* background-color: lightgray; */
-  /* background-color: #5F9EA0; */
   background-color: #000000;
 }
 
@@ -165,7 +157,6 @@ div.container {
 }
 
 div.container a {
-  /* color: bisque; */
   color: #fff;
   text-decoration: none;
   font: 20px Raleway;
@@ -178,9 +169,13 @@ div.container a {
 }
 
 form {
-  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* max-width: 300px;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
 }
 
 /* nav bar */
