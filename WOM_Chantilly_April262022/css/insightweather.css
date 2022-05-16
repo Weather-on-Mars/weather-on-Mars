@@ -1,0 +1,231 @@
+html,
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+.bg-container {
+  margin: 0;
+  background-image: url("../Images/Mars.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  border: 5px solid black;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+div.container {
+  font-family: Montserrat;
+  margin: 0 auto;
+  padding: 3em 3em;
+  text-align: center;
+}
+
+div.container a {
+  color: bisque;
+  text-decoration: none;
+  font: 20px Raleway;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  height: 100px;
+  z-index: 0;
+  cursor: pointer;
+}
+
+section,
+footer,
+header {
+  padding-left: 4rem;
+}
+
+h1,
+h2 {
+  color: bisque;
+}
+
+.red,
+footer {
+  background: #c45938;
+}
+
+div.container a {
+  color: bisque;
+  text-decoration: none;
+  font: 20px Montserrat;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  height: 100px;
+  z-index: 0;
+  cursor: pointer;
+}
+
+div.topBottomBordersOut a:before,
+div.topBottomBordersOut a:after {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: bisque;
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+div.topBottomBordersOut a:before {
+  top: 0px;
+  transform: translateY(10px);
+}
+
+div.topBottomBordersOut a:after {
+  bottom: 0px;
+  transform: translateY(-10px);
+}
+
+div.topBottomBordersOut a:hover:before,
+div.topBottomBordersOut a:hover:after {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/*Layouts*/
+.insight {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+.current-seven-days {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 4;
+  gap: 3rem;
+}
+
+.date,
+.temp,
+.wind p {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.current-info p {
+  font-size: 1rem;
+}
+
+.current-seven-days p {
+  color: #fff;
+  font-weight: 400;
+}
+
+.current-insight {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.mobileShow {
+  display: none;
+}
+/*Responsive Design */
+/* this sets the layout for desktop or laptop devices 
+ @media screen and (min-width: 481px) {
+   
+   
+   .mobileShow {
+     display: none;
+    }
+  }
+  */
+
+@media screen and (max-width: 480px) {
+  /* this sets the layout for mobile devices */
+  .container {
+    display: none;
+  }
+  .mobileShow {
+    display: inline;
+  }
+
+  .layout {
+    display: block;
+  }
+
+  .menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    /* border: 3px solid #fff; */
+  }
+  .menu-btn__burger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out;
+  }
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+    transition: all 0.5s ease-in-out;
+  }
+  .menu-btn__burger::before {
+    transform: translateY(-16px);
+  }
+  .menu-btn__burger::after {
+    transform: translateY(16px);
+  }
+  /* ANIMATION */
+  .menu-btn.open .menu-btn__burger {
+    /*transform: translateX(50px);*/
+    background: transparent;
+    box-shadow: none;
+  }
+  .menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) /*translate(35px, -35px)*/;
+  }
+  .menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) /*translate(35px, 35px)*/;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  li,
+  a {
+    color: bisque;
+    display: block;
+    font-family: Montserrat;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1.25rem;
+    text-decoration: none;
+    padding: 1rem;
+  }
+
+  .nav.open {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
