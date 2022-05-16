@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Insight Lander and its last weather records</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="/js/insightweather.js" defer></script>
+    <link rel="stylesheet" href="/css/insightweather.css" />
+  </head>
+  <body>
+    <div class="container red topBottomBordersOut">
+      <a href="homepage.html">HOME</a>
+      <a href="weather.html">MARS WEATHER</a>
+      <a href="marsdata.html">MARS DATA</a>
+      <a href="nasa_roverAPI.html">ROVER IMAGES</a>
+      <a href="nasa_api.html">NASA IMAGES</a>
+      <a href="aboutus.html">ABOUT</a>
+    </div>
+    <div class="bg-container">
+      <div class="mobileShow">
+        <div class="menu-btn">
+          <div class="menu-btn__burger"></div>
+        </div>
+        <nav id="nav" class="nav" role="navigation">
+          <ul
+            class="nav__menu"
+            id="menu"
+            tabindex="-1"
+            aria-label="main navigation"
+          >
+            <li class="nav__item">
+              <a href="homepage.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="weather.html" class="nav__link">Mars Weather</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Mars Data</a>
+            </li>
+            <li class="nav__item">
+              <a href="nasa_roverAPI.html" class="nav__link">Rover Images</a>
+            </li>
+            <li class="nav__item">
+              <a href="nasa_api.html" class="nav__link">NASA Images</a>
+            </li>
+            <li class="nav__item">
+              <a href="aboutus.html" class="nav__link">About</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <h1>Lastest Weather Information from Insight Lander</h1>
+      <div class="insight">
+        <div class="current-insight">
+          <div class="date">
+            <h2>Sol <span data-current-sol></span></h2>
+            <p><span data-current-date></span></p>
+          </div>
+          <div class="temp">
+            <p>High: <span data-current-temp-high></span>°C</p>
+            <p>Low: <span data-current-temp-low></span>°C</p>
+          </div>
+          <div class="wind">
+            <p>Wind Speed: <span data-wind-speed></span>KPH</p>
+            <p>Wind Orientation (Cardinal):<span data-wind-cardinal></span></p>
+          </div>
+        </div>
+        <div class="current-info">
+          <p>
+            InSight was taking daily weather measurements (temperature, wind,
+            pressure) on the surface of Mars at Elysium Planitia, a flat, smooth
+            plain near Mars’ equator.
+          </p>
+          <p>
+            This is only a part of InSight’s mission.
+            <a href="https://mars.nasa.gov/insight/mission/overview/"
+              >Click hear
+            </a>
+            to find out more.
+          </p>
+        </div>
+      </div>
+
+      <div class="seven-days" last-seven-days>
+        <h2>Weather Information Seven Last Days</h2>
+        <div class="current-seven-days" last-day></div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.reveal.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#button").click(function (e) {
+          // Button which will activate our modal
+          $("#modal").reveal({
+            // The item which will be opened with reveal
+            animation: "fade", // fade, fadeAndPop, none
+            animationspeed: 600, // how fast animtions are
+            closeonbackgroundclick: false, // if you click background will modal close?
+            dismissmodalclass: "close", // the class of a button or element that will close an open modal
+          });
+
+          return false;
+        });
+      });
+    </script>
+  </body>
+</html>
