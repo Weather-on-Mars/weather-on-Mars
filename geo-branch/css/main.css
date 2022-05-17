@@ -224,20 +224,19 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
+  text-decoration: none!important; 
 
-  border-radius: 50%;
   font-size: 20px;
   margin-top: 50px;
   padding: 8px 16px;
 }
 
-/* .returnBtn:hover {
+.previousBtn {
+  margin-right: 50px;
+}
 
-} */
-
-a.returnBtn {
-  text-decoration: none!important;
+.fowardBtn {
+  margin-left: 50px;
 }
 
 /* grid 3 columns */
