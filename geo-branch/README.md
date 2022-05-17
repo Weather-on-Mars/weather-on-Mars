@@ -2,7 +2,7 @@
 
 City College of San Francisco, CNIT 195  
 
-Group members: 
+Group members:"\n"
 Chantilly Apollon, Ada Jacques, Leonardo Garcia, Geo Wong
 
 Purpose: 
