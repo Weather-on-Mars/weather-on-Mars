@@ -1,0 +1,387 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+
+:is(h1, h2, h3) {
+	display: flex;
+  align-items: center;
+	justify-content: center;
+	margin: 0;
+} 
+
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+font-size: 12px;
+color: #fff;
+margin-top: 400px;
+
+}
+
+p {
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+}
+
+html, body {
+  scroll-behavior: smooth;
+
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Raleway;
+  background-color: #000000;
+}
+
+.bg-container-dark {
+  overflow-y: scroll;
+}
+
+.bg-container {
+  overflow-y: scroll;
+  background-image: url('../Images/Mars.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-container-dark {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-container-light {
+  background-color: #000000;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.main-title {
+  font-weight: bold;
+  font-size: 55px;
+  text-align: center;
+
+  margin-top: 130px;
+  margin-bottom: 200px;
+  color: black;
+  margin-right: 100; 
+}
+
+.main-title-subpage {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+
+  margin-top: 20px;
+  margin-bottom: 80px;
+  margin-right: 100;
+  opacity: 1.0;
+  color: sienna;
+  text-decoration: none;
+}
+
+.input-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+/* nasa_roverAPI container */
+.container {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #000000;
+}
+
+/* curiosityweather container */
+.container-curiosityweather {
+  margin: 0 auto;
+  text-align: center;
+
+  background-color: lightgray;
+}
+
+.rover-api-container {
+  overflow-y: scroll;
+  text-align: center;
+
+  margin: 0px;
+}
+
+legend {
+  text-align: center;
+}
+
+#submit {
+  text-align: center;
+}
+
+.p-info {
+  margin-top: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+}
+
+h1.main-title-subpage {
+  color: sienna;
+  font-size: 85px;
+  opacity: 1.0;
+
+  margin: 0;
+  margin-top: 50px;
+}
+
+h2.main-title-subpage {
+  opacity: 1.0;
+  color: sienna;
+  font-size: 40px;
+}
+
+div.container {
+  font-family: Raleway;
+  margin: 0 auto;
+  padding: 3em 3em;
+  text-align: center;
+}
+
+div.container a {
+  color: #fff;
+  text-decoration: none;
+  font: 20px Raleway;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  height: 100px;
+  z-index: 0;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* max-width: 300px;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+/* nav bar */
+.red {
+  background: #ff8c00;
+}
+
+/* curiosity weather */
+
+/*flex layout 2 by 2 squares*/
+.grid2x2 {
+  min-height: 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  color: white;
+
+  padding: 20px 0;
+  margin-top: 150px;
+  margin-right: auto;
+  
+}
+
+.grid2x2 > div {
+  display: flex; 
+  flex-basis: calc(50% - 40px);  
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 40px 0;
+}
+
+.grid2x2 > div > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.box {
+  color: sienna;
+  background-color:bisque;
+}
+
+.returnBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  border-radius: 50%;
+  font-size: 20px;
+  margin-top: 50px;
+  padding: 8px 16px;
+}
+
+/* .returnBtn:hover {
+
+} */
+
+a.returnBtn {
+  text-decoration: none!important;
+}
+
+/* grid 3 columns */
+
+.grid3x1 {
+  min-height: 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  color: white;
+
+  margin-top: 150px;
+}
+
+.grid3x1 > div {
+  display: flex; 
+  flex-basis: calc(33% - 40px);  
+  justify-content: center;
+  flex-direction: column;
+}
+
+.grid3x1 > div > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  background-color: black;
+  padding: 0px;
+}
+
+tr {
+  background-color: bisque;
+}
+
+/* Top and Bottom borders go out for animating navigation menu*/
+div.topBottomBordersOut a:before, div.topBottomBordersOut a:after {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: bisque;
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+div.topBottomBordersOut a:before {
+  top: 0px;
+  transform: translateY(10px);
+}
+
+div.topBottomBordersOut a:after {
+  bottom: 0px;
+  transform: translateY(-10px);
+}
+
+div.topBottomBordersOut a:hover:before, div.topBottomBordersOut a:hover:after {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+@media screen and (min-width:481px) {  /* this sets the layout for desktop or laptop devices */
+
+.mobileShow { display: none; } 
+
+}
+
+@media screen and (max-width:480px){ /* this sets the layout for mobile devices */
+.container { display:none; }
+.mobileShow { display: inline; } 
+
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  /* border: 3px solid #fff; */
+}
+
+.menu-btn__burger {
+  width: 50px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255,101,47,.2);
+  transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+transform: translateY(-16px);
+}
+
+.menu-btn__burger::after {
+transform: translateY(16px);
+}
+
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+/*transform: translateX(50px);*/
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) /*translate(35px, -35px)*/;
+}
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) /*translate(35px, 35px)*/;
+}
+
+.nav {
+  display: none;
+}
+
+li, a {
+  color:bisque;
+  display:block;
+  font-family: Raleway;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:5px;
+  font-size:1.25rem;
+  text-decoration:none;
+  padding:1rem;
+}
+
+.nav.open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+}
