@@ -1,6 +1,6 @@
-# weather-on-Mars
+# Weather on Mars
 
-CNIT 195 Project - Weather on Mars
+City College of San Francisco, CNIT 195  
 
 Group members: Chantilly Apollon, Ada Jacques, Leonardo Garcia, Geo Wong
 
