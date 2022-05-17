@@ -2,7 +2,7 @@
 
 City College of San Francisco, CNIT 195  
 
-Date: Feb 27th - May: 21st, 2022
+Date: Feb 27th - May 21st, 2022
 
 Group members: Chantilly Apollon, Ada Jacques, Leonardo Garcia, Geo Wong
 
