@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<title> NASA Weather API</title>
+<link rel="stylesheet" href="css/main.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="bg-container">  
+        <div class="container red topBottomBordersOut">
+            <a href="homepage.html">HOME</a>
+            <a href="weather.html">MARS WEATHER</a>
+            <a>MARS DATA</a>
+            <a href="nasa_roverAPI.html">ROVER IMAGES</a>
+            <a href="nasa_api.html">NASA IMAGES</a>
+            <a href="aboutus.html">ABOUT</a>
+        </div>
+        <div class="mobileShow">
+        <div class="menu-btn">
+        <div class="menu-btn__burger"></div>
+    </div>
+    <nav id="nav" class="nav" role="navigation">
+        <ul class="nav__menu" id="menu" tabindex="-1" aria-label="main navigation">
+            <li class="nav__item"><a href="homepage.html" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="weather.html" class="nav__link">Mars Weather</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Mars Data</a></li>
+            <li class="nav__item"><a href="nasa_roverAPI.html" class="nav__link">Rover Images</a></li>
+            <li class="nav__item"><a href="nasa_api.html" class="nav__link">NASA Images</a></li>
+            <li class="nav__item"><a href="aboutus.html" class="nav__link">About</a></li>
+        </ul>
+    </nav>
+    </div>
+    <h1 style="margin-top: 50px">InSight Weather</h1>
+    <h2>Rover Daily Weather Report</h2>
+    <div id="M20-Weather-Observations" class="section">
+        <div class="sectionInner paddedContent table_wrapper has-scroll">
+        <p style="margin-top: 50px;">The InSight mission seeks to uncover how a rocky body forms and evolves to become a planet by investigating the interior<br> structure and composition of Mars. 
+            The mission will also determine the rate of Martian tectonic activity and meteorite impacts.</p><br>
+        <p>Credit: NASA/JPL-Caltech/CAB(CSIC-INTA)</p><br><br><br><br>
+    <div>
+        
+
+    <table id="" class="mb_table" style="width:100%">
+    <thead>
+    <tr>
+        <th colspan="1" scope="col" class="">Date</th>
+        <th colspan="1" scope="col" id="" class="header-left">Sol</th>
+        <th colspan="2" scope="col" id="" class="textAlignCenter">
+        <div>Air Temperature (<span class="">&deg;F</span><span class="slash"> | </span>
+            <span class="">&deg;C</span>)</div>
+        </th>
+        <th colspan="1" scope="col" id="" class="textAlignCenter">Pressure (Pa)</th>
+        <th colspan="1" scope="col" id="" class="textAlignCenter">Sunrise</th>
+        <th colspan="1" scope="col" id="" class="textAlignCenter">Sunset</th>
+    </tr>
+    <tr>
+        <th colspan="2" scope="col" class="second-row"></th>
+        <th colspan="1" scope="col" class="textAlignCenter second-row">Max.</th>
+        <th colspan="1" scope="col" class="textAlignCenter second-row">Min.</th>
+        <th colspan="3" scope="col" class="second-row"></th>
+    </tr>
+    </thead>
+    <tr id="weather_top"></tr>
+    </table>
+    </div>
+        <p class="textSmall" style="margin-top: 50px">As more data from a particular sol is downlinked from the spacecraft (sometimes several days later), these values are recalculated, and consequently may change as more data is received on Earth.</p>
+    </div>
+    </div>
+    <div class="returnBtn">
+        <a href="weather.html">&laquo; Previous</a>
+    </div>
+    <script src="m20-weather.js"></script>
+    <link rel="stylesheet" href="weather.css" type="text/css">
+    <div class="minHeight100"></div>
+    <style>.windspeed {display:none;}#weather_observation td.sun {background-color:white}#weather_observation td.pressure{background-color:#f9f9f9;border:none}@media screen and (max-width:700px) { .table_wrapper.has-scroll { position: relative; overflow: hidden;}.table_wrapper.has-scroll>div { overflow-x: auto;}.table_wrapper {/*width: calc(100% - 100px);*/ -webkit-overflow-scrolling: touch;}.table_wrapper table { border-spacing: 1px; border-collapse: collapse; font-size: 15px; line-height: normal;width: auto !important;}}</style>
+    </div>
+    <script src="js/main.js"></script>
+    </div>
+</body>
+</html>
