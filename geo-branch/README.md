@@ -1,6 +1,7 @@
 # Weather on Mars
 
 City College of San Francisco, CNIT 195  
+Instructor: Claudia DaSilva
 
 Date: Feb 27th - May 21st, 2022
 
