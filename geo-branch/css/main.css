@@ -19,9 +19,12 @@ margin-top: 400px;
 }
 
 p {
-  margin: auto;
   justify-content: center;
   text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 55em;
   color: #fff;
   font-size: 22px;
 }
@@ -88,6 +91,11 @@ html, body {
   opacity: 1.0;
   color: sienna;
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .input-form {
